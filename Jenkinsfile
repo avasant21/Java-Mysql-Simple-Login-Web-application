@@ -29,7 +29,7 @@ pipeline {
 		}
 		stage('docker_setup') {
 			steps {				
-			    sh "sudo ansible-playbook -i hosts docker.yml"
+			    sh "sudo ansible-playbook -i hosts docker.yml --become"
    	        }
 		}
 		stage('container_up') {
