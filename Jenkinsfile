@@ -13,13 +13,13 @@ pipeline {
 		}
 		stage('docker_image') {
 			steps {
-			    sh "docker build -t mtwebapp:3.0 ."
+			    sh "docker build -t mtwebapp:4.0 ."
    	        }
 		}
 		stage('docker_push') {
 			steps {
-			    sh "sudo docker tag mtwebapp:3.0 milindtech/mtwebapp:3.0"
-				sh "sudo docker push milindtech/mtwebapp:3.0"
+			    sh "sudo docker tag mtwebapp:4.0 milindtech/mtwebapp:4.0"
+				sh "sudo docker push milindtech/mtwebapp:4.0"
    	        }
 		}
 		stage('infra_setup') {
