@@ -7,13 +7,5 @@
         name: python3-pip
         state: present
 
-    - name: install docker-py
-      raw: pip3 install docker-py
-
-    - name: Restart a container
-      docker_container:
-        name: webapp01
-        image: milindtech/mtwebapp:4.0
-        state: started
-        ports:
-        - "8080:8080"
+    - name: Run Docker
+      raw: docker run -d --name webapp01 -p 8080:8080 milindtech/mtwebapp:4.0
