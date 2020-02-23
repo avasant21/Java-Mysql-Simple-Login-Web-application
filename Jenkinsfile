@@ -22,7 +22,6 @@ pipeline {
 				sh "sudo docker push milindtech/mtwebapp:3.0"
    	        }
 		}
-		}
 		stage('infra_setup') {
 			steps {				
 			    sh "ansible-playbook -i hosts ec2_setup.yml"
