@@ -1,0 +1,11 @@
+---
+# Service options.
+docker_service_state: started
+docker_service_enabled: true
+docker_restart_handler_state: restarted
+
+# list of users to be added to docker group
+docker_users: []
+
+
+

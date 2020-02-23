@@ -1,0 +1,6 @@
+---
+- name: Docker Setup
+  hosts: webserver
+
+  roles:
+    - role: docker

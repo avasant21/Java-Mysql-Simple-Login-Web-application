@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+    - name: Restart a container
+      docker_container:
+        name: webapp01
+        image: milindtech/webapp:3.0
+        state: started
+        ports:
+        - "8080:8080"

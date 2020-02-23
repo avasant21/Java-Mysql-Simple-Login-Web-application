@@ -22,9 +22,23 @@ pipeline {
 				sh "sudo docker push milindtech/mtwebapp:2.0"
    	        }
 		}
+		}
+		stage('infra_setup') {
+			steps {
+				
+			    sh "ansible-playbook -i hosts ec2_setup.yml"
+   	        }
+		}
+		stage('docker_setup') {
+			steps {
+				
+			    sh "ansible-playbook -i hosts docker.yml"
+   	        }
+		}
 		stage('container_up') {
 			steps {
-			    sh "docker run -itd --name webapp01 -p 8090:8080 mtwebapp:2.0"
+				
+			    sh "ansible-playbook -i hosts docker_webapp.yml"
    	        }
 		}
 	}
