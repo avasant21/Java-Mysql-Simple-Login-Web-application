@@ -24,17 +24,17 @@ pipeline {
 		}
 		stage('infra_setup') {
 			steps {				
-			    sh "ansible-playbook -i hosts ec2_setup.yml"
+			    sh "sudo ansible-playbook -i hosts ec2_setup.yml"
    	        }
 		}
 		stage('docker_setup') {
 			steps {				
-			    sh "ansible-playbook -i hosts docker.yml"
+			    sh "sudo ansible-playbook -i hosts docker.yml"
    	        }
 		}
 		stage('container_up') {
 			steps {				
-			    sh "ansible-playbook -i hosts docker_webapp.yml"
+			    sh "sudo ansible-playbook -i hosts docker_webapp.yml"
    	        }
 		}
 	}
