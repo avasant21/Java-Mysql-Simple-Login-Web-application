@@ -8,8 +8,7 @@
         state: present
 
     - name: install docker-py
-      command:
-        name: pip3 install docker-py
+      raw: pip3 install docker-py
 
     - name: Restart a container
       docker_container:
